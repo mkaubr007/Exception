@@ -61,9 +61,9 @@ public class MoodAnalyserTest {
     }
     @Test
     public void givenNullMood_ShouldReturnCustomException() {
-        MoodAnalyser moodAnalyser=new MoodAnalyser();
+        MoodAnalyserRefactor moodAnalyser=new MoodAnalyserRefactor(null);
         try {
-            moodAnalyser.analyseMood(null);
+            moodAnalyser.analyseMood();
         } catch ( MoodAnalyserException e) {
             String expectedResult="Invalid mood";
             Assert.assertEquals(expectedResult,e.message);
@@ -71,9 +71,9 @@ public class MoodAnalyserTest {
     }
     @Test
     public void givenEmptyMood_ShouldReturnCustomException() {
-        MoodAnalyser moodAnalyser=new MoodAnalyser();
+        MoodAnalyserRefactor moodAnalyser=new MoodAnalyserRefactor("");
         try {
-            moodAnalyser.analyseMood(null);
+            moodAnalyser.analyseMood();
         } catch ( MoodAnalyserException e) {
             String expectedResult="Invalid mood";
             Assert.assertEquals(expectedResult,e.message);
