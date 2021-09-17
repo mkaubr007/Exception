@@ -50,12 +50,32 @@ public class MoodAnalyserTest {
         Assert.assertEquals("happy", mood);
     }
      @Test
-    public void givenNullMood_ShouldReturnHappy() {
+    public void givenNullMood_ShouldReturnInvalid() {
         MoodAnalyser moodAnalyser=new MoodAnalyser();
         try {
             moodAnalyser.analyseMood(null);
         } catch ( MoodAnalyserException e) {
-            String expectedResult="happy";
+            String expectedResult="Invalid mood";
+            Assert.assertEquals(expectedResult,e.message);
+        }
+    }
+    @Test
+    public void givenNullMood_ShouldReturnCustomException() {
+        MoodAnalyser moodAnalyser=new MoodAnalyser();
+        try {
+            moodAnalyser.analyseMood(null);
+        } catch ( MoodAnalyserException e) {
+            String expectedResult="Invalid mood";
+            Assert.assertEquals(expectedResult,e.message);
+        }
+    }
+    @Test
+    public void givenEmptyMood_ShouldReturnCustomException() {
+        MoodAnalyser moodAnalyser=new MoodAnalyser();
+        try {
+            moodAnalyser.analyseMood(null);
+        } catch ( MoodAnalyserException e) {
+            String expectedResult="Invalid mood";
             Assert.assertEquals(expectedResult,e.message);
         }
     }
