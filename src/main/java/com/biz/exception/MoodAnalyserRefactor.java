@@ -9,7 +9,7 @@ public class MoodAnalyserRefactor {
 
     public String analyseMood() throws MoodAnalyserException {
         try {
-            if (message.toLowerCase().contains("sad")) {
+            if (message.toLowerCase().contains("SAD")) {
                 return "sad";
             } else {
                 return "happy";
