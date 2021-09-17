@@ -49,15 +49,14 @@ public class MoodAnalyserTest {
         }
         Assert.assertEquals("happy", mood);
     }
-    @Test
-    public void givenNullMood_ShouldReturnInvalid() {
+     @Test
+    public void givenNullMood_ShouldReturnHappy() {
         MoodAnalyser moodAnalyser=new MoodAnalyser();
         try {
             moodAnalyser.analyseMood(null);
         } catch ( MoodAnalyserException e) {
-            String expectedResult="Invalid mood";
+            String expectedResult="happy";
             Assert.assertEquals(expectedResult,e.message);
         }
     }
-
 }
